@@ -10,13 +10,13 @@ from livrosCaindo import *
 from LoopPrincipal import *
 from ship import *
 from CriarJogador import *
+from TelaPrincipal import *
 
 pygame.init()
 
 # ----- Gera tela principal
 
-window = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('player')
+
 
 # ----- Inicia assets----
 font = pygame.font.SysFont(None, 48)

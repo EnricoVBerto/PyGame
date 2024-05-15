@@ -1,5 +1,13 @@
 import pygame
+import random
+from ataque import *
 from config import *
+from criarLivros import *
+from livro import *
+from livrosCaindo import *
+from LoopPrincipal import *
+from ship import *
+from CriarJogador import *
 from main import *
 class Ship(pygame.sprite.Sprite):
     def __init__(self, ship_img, all_sprites, all_ataques, ataque_img):
