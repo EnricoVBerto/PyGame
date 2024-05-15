@@ -2,6 +2,13 @@
 # ----- Importa e inicia pacotes
 import pygame
 import random
+from ataque import *
+from config import *
+from criarLivros import *
+from livro import *
+from livrosCaindo import *
+from LoopPrincipal import *
+from ship import *
 
 pygame.init()
 

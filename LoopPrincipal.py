@@ -1,5 +1,6 @@
 import pygame
 from config import *
+from main import *
 pygame.mixer.music.play(loops=-1)
 while game:
     clock.tick(FPS)

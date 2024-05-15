@@ -1,6 +1,6 @@
 import pygame
 from config import *
-import random
+from main import *
 class Ship(pygame.sprite.Sprite):
     def __init__(self, ship_img, all_sprites, all_ataques, ataque_img):
         # Construtor da classe mãe (Sprite).
