@@ -1,5 +1,5 @@
 import pygame
-from from pygame import *
+from from Main import *
 from livro import *
 from config import *
 from criarLivros import *

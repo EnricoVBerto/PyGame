@@ -16,8 +16,6 @@ while game:
                 player.speedx -= 10
             if event.key == pygame.K_RIGHT:
                 player.speedx += 10
-            if event.key == pygame.K_SPACE:
-                player.shoot()
 
             if event.key == pygame.K_a:
                 player2.speedx -= 10
