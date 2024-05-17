@@ -1,2 +1,0 @@
-vida_jogador_1=10
-vida_jogador_2=10
