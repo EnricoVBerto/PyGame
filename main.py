@@ -98,9 +98,9 @@ while game:
     if len(hits2) > 0:
         game = False 
     
-    hits3 = pygame.sprite.spritecollide(player2, player, True)
-    if len(hits3) > 0:
-        game = False
+    #hits3 = pygame.sprite.spritecollide(player2, player, True)
+    #if len(hits3) > 0:
+        #game = False
     # ----- Gera saídas
     window.fill((0, 0, 0))  # Preenche com a cor branca
     window.blit(assets['background'], (0, 0))
