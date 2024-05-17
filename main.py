@@ -22,7 +22,7 @@ pygame.init()
 
 
 # Carrega os sons do jogo
-pygame.mixer.music.load('assets/snd/tgfcoder-FrozenJam-SeamlessLoop.ogg')
+pygame.mixer.music.load('C:\Users\enric\Desktop\PyGame\PyGame\assets\snd\Survivor - Eye of the Tiger228574-6ff089da-f029-41c9-9ce8-81a81e9aedab.mp3')
 pygame.mixer.music.set_volume(0.4)
 boom_sound = pygame.mixer.Sound('assets/snd/expl3.wav')
 destroy_sound = pygame.mixer.Sound('assets/snd/expl6.wav')
