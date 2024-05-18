@@ -32,9 +32,9 @@ all_livros = pygame.sprite.Group()
 all_ataques = pygame.sprite.Group()
 
 assets = load_assets()
-player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 40)
+player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350)
 all_sprites.add(player)
-player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 400)
+player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 10)
 all_sprites.add(player2)
 
 for i in range(3):

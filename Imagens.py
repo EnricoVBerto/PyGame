@@ -3,7 +3,7 @@ from config import *
 
 def load_assets():
     livro_img = pygame.image.load('assets/img/l.png').convert_alpha()
-    ship_img = pygame.image.load('assets/img/ooo.gif').convert_alpha()
+    ship_img = pygame.image.load('assets/img/image .gif').convert_alpha()
     fighter_img = pygame.image.load('assets/img/fot.png').convert_alpha()
     return {
         # ----- Inicia assets----
