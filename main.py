@@ -47,8 +47,8 @@ game = True
 clock = pygame.time.Clock()
 FPS = 30
 
-vida_jogador_1=10
-vida_jogador_2=10
+vida_jogador_1=100
+vida_jogador_2=100
 
 pygame.mixer.music.play(loops=-1)
 while game:
@@ -89,15 +89,23 @@ while game:
     # Atualizando a posição dos meteoros
     all_sprites.update()
 
-    # Verifica se houve colisão entre nave e meteoro
+    # Verifica se houve colisão os jogadores e os livros
     hits = pygame.sprite.spritecollide(player, all_livros, True)
     if len(hits) > 0:
-        game = False
+        #game = False
+        vida_jogador_1 -= 10
+        livro = Livro(assets['livro_img'])
+        all_sprites.add(livro)
+        all_livros.add(livro)
 
     hits2 = pygame.sprite.spritecollide(player2, all_livros, True)
     if len(hits2) > 0:
-        game = False 
-    
+        #game = False 
+        vida_jogador_2 -= 10
+        livro = Livro(assets['livro_img'])
+        all_sprites.add(livro)
+        all_livros.add(livro)
+
     #hits3 = pygame.sprite.spritecollide(player2, player, True)
     #if len(hits3) > 0:
         #game = False
@@ -106,6 +114,46 @@ while game:
     window.blit(assets['background'], (0, 0))
     # Desenhando livros
     all_sprites.draw(window)
+
+    HP2Porcent = vida_jogador_2/100 #obtem a porcentagem de dano
+    cor = (255, 0, 0) #Cor vermelha para HP perdido. 
+    vertices = [(50, 50), (550, 50), (550, 75), (50, 75)] #barra de HP é um retângulo
+    pygame.draw.polygon(window, cor, vertices)#desenha a barra de HP perdido
+
+    cor = (0, 255, 0)#Escolhe a cor verde 
+    vertices = [(50, 50), (50+HP2Porcent*500, 50), (50+HP2Porcent*500, 75), (50, 75)] #quanto menor a porcentagem de HP, menor sera a barra verde
+    pygame.draw.polygon(window, cor, vertices) #desenha o HP que tem em cima do HP perdido.
+
+
+
+    HP1Porcent = vida_jogador_1/100 #obtem a porcentagem de dano
+    cor = (255, 0, 0) #Cor vermelha para HP perdido. 
+    vertices = [(WIDTH-50, 50), (WIDTH-550, 50), (WIDTH-550, 75), (WIDTH-50, 75)] #barra de HP é um retângulo
+    pygame.draw.polygon(window, cor, vertices)#desenha a barra de HP perdido
+
+    cor = (0, 255, 0)#Escolhe a cor verde 
+    vertices = [(WIDTH-50, 50), (WIDTH-50-HP1Porcent*500, 50),(WIDTH-50-HP1Porcent*500, 75), (WIDTH-50, 75)] #quanto menor a porcentagem de HP, menor sera a barra verde
+    pygame.draw.polygon(window, cor, vertices) #desenha o HP que tem em cima do HP perdido.
+
+
+
+
+
+
+
+
+    font = pygame.font.SysFont(None, 48)
+    text = font.render(str(vida_jogador_2), True, (0, 0, 255))
+    window.blit(text, (50, 50))
+
+    font = pygame.font.SysFont(None, 48)
+    text = font.render(str(vida_jogador_1), True, (0, 0, 255))
+    window.blit(text, (WIDTH-100, 50))
+
+
+
+
+
 
     pygame.display.update()  # Mostra o novo frame para o jogador
 
