@@ -14,10 +14,8 @@ class Livro(pygame.sprite.Sprite):
         self.speedy = random.randint(2, 9)
 
     def update(self):
-        # Atualizando a posição do meteoro
         self.rect.x += self.speedx
         self.rect.y += self.speedy
-        # Se o meteoro passar do final da tela, volta para cima e sorteia
         # novas posições e velocidades
         if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH:
             self.rect.x = random.randint(0, WIDTH-LIVRO_WIDTH)
