@@ -97,7 +97,9 @@ while game:
         livro = Livro(assets['livro_img'])
         all_sprites.add(livro)
         all_livros.add(livro)
-
+        if vida_jogador_1<=0:
+            game = False
+        
     hits2 = pygame.sprite.spritecollide(player2, all_livros, True)
     if len(hits2) > 0:
         #game = False 
@@ -105,10 +107,9 @@ while game:
         livro = Livro(assets['livro_img'])
         all_sprites.add(livro)
         all_livros.add(livro)
-
-    #hits3 = pygame.sprite.spritecollide(player2, player, True)
-    #if len(hits3) > 0:
-        #game = False
+        if vida_jogador_2<=0:
+            game = False
+            
     # ----- Gera saídas
     window.fill((0, 0, 0))  # Preenche com a cor branca
     window.blit(assets['background'], (0, 0))
@@ -149,10 +150,6 @@ while game:
     font = pygame.font.SysFont(None, 48)
     text = font.render(str(vida_jogador_1), True, (0, 0, 255))
     window.blit(text, (WIDTH-100, 50))
-
-
-
-
 
 
     pygame.display.update()  # Mostra o novo frame para o jogador
