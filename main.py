@@ -49,7 +49,7 @@ def game_screen(window):
     vida_jogador_2=100
 
     pygame.mixer.music.play(loops=-1)
-    while game:
+    while state != DONE:
         clock.tick(FPS)
 
         # ----- Trata eventos
