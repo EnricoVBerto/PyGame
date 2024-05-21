@@ -1,7 +1,7 @@
 import pygame
 from ship import *
-from Imagens import *
-
+from Imagens import load_assets
+from config import *
 
 # ----- Inicia assets----
 def game_creen(window):

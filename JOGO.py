@@ -1,9 +1,9 @@
 import pygame
 import random
-from config import WIDTH, HEIGHT, INIT, GAME, QUIT, DONE
+from config import WIDTH, HEIGHT, INIT, GAME, DONE
 from init_screen import init_screen 
 from main import game_screen
-from telafim import game_over
+from telafim import *
 pygame.init()
 pygame.mixer.init()
 
