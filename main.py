@@ -98,7 +98,7 @@ def game_screen(window):
             all_sprites.add(livro)
             all_livros.add(livro)
             if vida_jogador_1<=0:
-                game = False
+                state = DONE
             
         hits2 = pygame.sprite.spritecollide(player2, all_livros, True)
         if len(hits2) > 0:
@@ -108,7 +108,7 @@ def game_screen(window):
             all_sprites.add(livro)
             all_livros.add(livro)
             if vida_jogador_2<=0:
-                game = False
+                state = DONE
                 
         # ----- Gera saídas
         window.fill((0, 0, 0))  # Preenche com a cor branca
