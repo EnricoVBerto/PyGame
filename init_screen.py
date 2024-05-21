@@ -1,5 +1,6 @@
 import pygame
 from os import path
+from Imagens import *
 
 from config import BLACK, FPS, GAME, QUIT
 
@@ -9,7 +10,7 @@ def init_screen(screen):
     clock = pygame.time.Clock()
 
     # Carrega o fundo da tela inicial
-    tela_inicial = pygame.image.load('assets/img/Corredores foto.npg.jpeg')
+    tela_inicial = pygame.image.load(path.join(IMG_DIR, 'final.JPG')).convert()
     background_rect = tela_inicial.get_rect()
 
     running = True
