@@ -4,7 +4,7 @@ from Imagens import *
 
 
 # ----- Inicia assets----
-def game_screen(window):
+def game_creen(window):
 
     # Carrega os sons do jogo
     pygame.mixer.music.load('assets/snd/Survivor - Eye of the Tiger228574-6ff089da-f029-41c9-9ce8-81a81e9aedab.mp3')
