@@ -167,4 +167,4 @@ def game_screen(window):
 
     # ===== Finalização =====
      # Função do PyGame que finaliza os recursos utilizados
-
+    return DONE

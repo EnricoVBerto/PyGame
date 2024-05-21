@@ -21,3 +21,5 @@ in_HEIGHT= 800
 INIT = 0
 GAME = 1
 QUIT = 2
+DONE = 2
+BG_QUIT= 'game over'
