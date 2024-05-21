@@ -26,9 +26,9 @@ def game_screen(window):
     all_livros = pygame.sprite.Group()
     all_ataques = pygame.sprite.Group()
 
-    player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350)
+    player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350,HEIGHT-10)
     all_sprites.add(player)
-    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 10)
+    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 10,HEIGHT-10)
     all_sprites.add(player2)
 
     for i in range(3):
@@ -66,11 +66,28 @@ def game_screen(window):
                         player.speedx -= 10
                     if event.key == pygame.K_RIGHT:
                         player.speedx += 10
+                    if event.key == pygame.K_UP:
+                        if player.rect.bottom == HEIGHT-10:
+                            print('S')
+                            player.speedy -= 50              
+                    if event.key == pygame.K_DOWN:
+                        player.shoot(player2.rect.x)
 
+
+                    
                     if event.key == pygame.K_a:
                         player2.speedx -= 10
                     if event.key == pygame.K_d:
                         player2.speedx += 10
+                        
+                    if event.key == pygame.K_w:
+                        if player2.rect.bottom == HEIGHT-10:
+                            print('S')
+                            player2.speedy -= 50  
+                        
+                                
+                    if event.key == pygame.K_s:
+                        player2.shoot(player.rect.x)
 
                 # Verifica se soltou alguma tecla.
                 if event.type == pygame.KEYUP:
@@ -88,7 +105,6 @@ def game_screen(window):
         # ----- Atualiza estado do jogo
         # Atualizando a posição dos meteoros
         all_sprites.update()
-
         # Verifica se houve colisão os jogadores e os livros
         hits = pygame.sprite.spritecollide(player, all_livros, True)
         if len(hits) > 0:
