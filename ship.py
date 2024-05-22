@@ -21,6 +21,9 @@ class Ship(pygame.sprite.Sprite):
         self.all_ataques = all_ataques
         self.ataque_img = ataque_img
 
+        self.last_shot = pygame.time.get_ticks()
+        self.cooldown = 500
+
     def update(self):
         # Atualização da posição da nave
         
@@ -46,9 +49,19 @@ class Ship(pygame.sprite.Sprite):
 
     def shoot(self,ddd,inimigo):
         # A nova bala vai ser criada logo acima e no centro horizontal da nave
-        new_ataque = Ataque(self.ataque_img, self.rect.centery, self.rect.centerx,ddd,inimigo)
-        self.all_sprites.add(new_ataque)
-        self.all_ataques.add(new_ataque)
+        now = pygame.time.get_ticks()
+        # Verifica quantos ticks se passaram desde o último tiro.
+        elapsed_ticks = now - self.last_shot
+
+        # Se já pode atirar novamente...
+        if elapsed_ticks > self.cooldown:
+            self.last_shot = now
+            new_ataque = Ataque(self.ataque_img, self.rect.centery, self.rect.centerx,ddd,inimigo)
+            self.all_sprites.add(new_ataque)
+            self.all_ataques.add(new_ataque)
+
+
+
     def Direção(self, inimigo,lado):
         if lado == True:
             if self.rect.centerx < inimigo.rect.centerx:
