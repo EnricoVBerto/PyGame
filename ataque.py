@@ -16,9 +16,9 @@ class Ataque(pygame.sprite.Sprite):
         self.inicialx = self.rect.x
 
         if self.rect.x > Xdoinimigo:
-            self.speedx = -15  # Velocidade fixa para cima
+            self.speedx = -30  # Velocidade fixa para cima
         else:
-            self.speedx = 15  # Velocidade fixa para cima
+            self.speedx = 30  # Velocidade fixa para cima
 
 
     def update(self):
