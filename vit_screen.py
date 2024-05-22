@@ -26,15 +26,15 @@ def vit1_screen(screen):
             if event.type == pygame.QUIT:
                 state = QUIT
                 running = False
-
-            if event.type == pygame.KEYUP:
-                state = GAME
-                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    state = GAME
+                    running = False
 
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
 
-
+        
         vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
         pygame.draw.polygon(screen, BLACK, vertices)
                 
@@ -42,7 +42,10 @@ def vit1_screen(screen):
         font = pygame.font.SysFont(None, 96)
         text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
         screen.blit(text, (WIDTH/4, HEIGHT/2)) 
-        
+
+        font = pygame.font.SysFont(None, 46)
+        text = font.render(str('Aperte espaço para lutar denovo'), True, (0, 0, 255))
+        screen.blit(text, (WIDTH/3, HEIGHT-HEIGHT/4))          
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
@@ -70,14 +73,15 @@ def vit2_screen(screen):
             if event.type == pygame.QUIT:
                 state = QUIT
                 running = False
-
-            if event.type == pygame.KEYUP:
-                state = GAME
-                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    state = GAME
+                    running = False
 
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         
+
         vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
         pygame.draw.polygon(screen, BLACK, vertices)
                 
@@ -85,6 +89,10 @@ def vit2_screen(screen):
         font = pygame.font.SysFont(None, 96)
         text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
         screen.blit(text, (WIDTH/4, HEIGHT/2)) 
+
+        font = pygame.font.SysFont(None, 46)
+        text = font.render(str('Aperte espaço para lutar denovo'), True, (0, 0, 255))
+        screen.blit(text, (WIDTH/3, HEIGHT-HEIGHT/4)) 
         
 
         # Depois de desenhar tudo, inverte o display.
