@@ -1,18 +1,28 @@
-Teclas para andar dos jogadores: 
+NOME DO JOGO:
 
-Esquerda - 
+    Insper Fighter
 
-Jogador 1 : A
-Jogador 2 : Seta para a esquerda
+ALUNOS:
 
-Direita - 
+    Enrico Berto
+    Gustavo Forbes
+    Gianfranco Baglioni
 
-Jogador 1 : D
-Jogador 2 : Seta para a direita
+Para rodar o jogo é necessário entrar no vsc, rodar o arquivo, comn isso uma tela inicial será aberta e para iniciar o jogo é necessário apertar qualquer tecla.
 
+Comandos:
 
+Player 1:
 
-REFERENCIAS :
+    W -> Pula
+    S -> Ataca
+    D -> Anda para a direita
+    A -> Anda para a esquerda
 
-referencia/jogo_v12.py
-https://dessoft.insper-comp.com.br/conteudo/pygame
+Player 2:
+
+    Up arrow key (Seta para cima) -> Pula
+    Down arrow key (Seta para baixo) -> Ataca
+    Right arrow key (Seta para a direita) -> Anda para a direita
+    Left arrow key (Seta para a esquerda) -> Anda para a esquerda
+
