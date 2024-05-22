@@ -121,8 +121,7 @@ def game_screen(window):
             livro = Livro(assets['livro_img'])
             all_sprites.add(livro)
             all_livros.add(livro)
-            if vida_jogador_1<=0:
-                state = DONE
+
             
         hits = pygame.sprite.spritecollide(player2, all_livros, True)
         if len(hits) > 0:
@@ -131,23 +130,23 @@ def game_screen(window):
             livro = Livro(assets['livro_img'])
             all_sprites.add(livro)
             all_livros.add(livro)
-            if vida_jogador_2<=0:
-                state = DONE
+
+
 
 
         hits = pygame.sprite.spritecollide(player,all_ataques2,True)                
         if len(hits) > 0:
             #game = False 
             vida_jogador_1 -= 7.5
-            if vida_jogador_1<=0:
-                state = DONE
+
+
 
         hits = pygame.sprite.spritecollide(player2,all_ataques,True)                
         if len(hits) > 0:
             #game = False 
             vida_jogador_2 -= 7.5
-            if vida_jogador_2<=0:
-                state = DONE
+  
+
         
 
 
@@ -188,6 +187,23 @@ def game_screen(window):
         font = pygame.font.SysFont(None, 48)
         text = font.render(str(vida_jogador_1), True, (0, 0, 255))
         window.blit(text, (WIDTH-100, 50))
+
+        if vida_jogador_2 <= 0:
+            cor = (0, 0, 0)#Escolhe a cor verde 
+            vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
+            pygame.draw.polygon(window, cor, vertices)
+
+            font = pygame.font.SysFont(None, 96)
+            text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
+            window.blit(text, (WIDTH/2, HEIGHT/2))
+        if vida_jogador_1 <= 0:
+            cor = (0, 0, 0)#Escolhe a cor verde 
+            vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
+            pygame.draw.polygon(window, cor, vertices)
+
+            font = pygame.font.SysFont(None, 96)
+            text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
+            window.blit(text, (WIDTH/2, HEIGHT/2))
 
 
         pygame.display.update()  # Mostra o novo frame para o jogador
