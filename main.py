@@ -192,18 +192,19 @@ def game_screen(window):
             cor = (0, 0, 0)#Escolhe a cor verde 
             vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
             pygame.draw.polygon(window, cor, vertices)
+            vida_jogador_1 +=100
 
             font = pygame.font.SysFont(None, 96)
             text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
-            window.blit(text, (WIDTH/2, HEIGHT/2))
+            window.blit(text, (WIDTH/4, HEIGHT/2))
         if vida_jogador_1 <= 0:
             cor = (0, 0, 0)#Escolhe a cor verde 
             vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
             pygame.draw.polygon(window, cor, vertices)
-
+            vida_jogador_2 +=100
             font = pygame.font.SysFont(None, 96)
             text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
-            window.blit(text, (WIDTH/2, HEIGHT/2))
+            window.blit(text, (WIDTH/4, HEIGHT/2))
 
 
         pygame.display.update()  # Mostra o novo frame para o jogador
