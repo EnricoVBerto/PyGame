@@ -1,7 +1,6 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
 import pygame
-import random
 from ataque import *
 from ataque2 import *
 from config import *
@@ -39,8 +38,9 @@ def game_screen(window):
         all_livros.add(livro)
     DONE = 0
     PLAYING = 1
+
    
-    state = PLAYING
+    estado = PLAYING
     keys_down={}
     
     # Variável para o ajuste de velocidade
@@ -51,15 +51,15 @@ def game_screen(window):
     vida_jogador_2=100
 
     pygame.mixer.music.play(loops=-1)
-    while state != DONE:
+    while estado == PLAYING:
         clock.tick(FPS)
 
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                state = DONE
-            if state == PLAYING:
+                estado = DONE
+            if estado == PLAYING:
             # Verifica se apertou alguma tecla.
                 if event.type == pygame.KEYDOWN:
                     keys_down[event.key]= True
@@ -188,27 +188,18 @@ def game_screen(window):
         text = font.render(str(vida_jogador_1), True, (0, 0, 255))
         window.blit(text, (WIDTH-100, 50))
 
-        if vida_jogador_2 <= 0:
-            cor = (0, 0, 0)#Escolhe a cor verde 
-            vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
-            pygame.draw.polygon(window, cor, vertices)
-            vida_jogador_1 +=100
 
-            font = pygame.font.SysFont(None, 96)
-            text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
-            window.blit(text, (WIDTH/4, HEIGHT/2))
         if vida_jogador_1 <= 0:
-            cor = (0, 0, 0)#Escolhe a cor verde 
-            vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
-            pygame.draw.polygon(window, cor, vertices)
-            vida_jogador_2 +=100
-            font = pygame.font.SysFont(None, 96)
-            text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
-            window.blit(text, (WIDTH/4, HEIGHT/2))
+            estado = DONE
+            return VIT2
 
+        if vida_jogador_2 <= 0:
+            estado = DONE
+            return VIT1
 
-        pygame.display.update()  # Mostra o novo frame para o jogador
+        pygame.display.update()# Mostra o novo frame para o jogador
 
+    return QUIT 
     # ===== Finalização =====
      # Função do PyGame que finaliza os recursos utilizados
 
