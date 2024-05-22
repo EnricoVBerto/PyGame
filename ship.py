@@ -47,4 +47,14 @@ class Ship(pygame.sprite.Sprite):
         new_ataque = Ataque(self.ataque_img, self.rect.centery, self.rect.centerx,ddd,inimigo)
         self.all_sprites.add(new_ataque)
         self.all_ataques.add(new_ataque)
-
+    def Direção(self, inimigo,lado):
+        if lado == True:
+            if self.rect.centerx < inimigo.rect.centerx:
+                self.image = self.imagenormal
+            else:
+                self.image = self.imageespelho
+        else:
+            if self.rect.centerx < inimigo.rect.centerx:
+                self.image = self.imageespelho
+            else:
+                self.image = self.imagenormal
