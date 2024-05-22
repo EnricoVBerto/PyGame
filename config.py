@@ -21,3 +21,5 @@ in_HEIGHT= 800
 INIT = 0
 GAME = 1
 QUIT = 2
+VIT1 = 3
+VIT2 = 4
