@@ -71,7 +71,7 @@ def game_screen(window):
                     if event.key == pygame.K_UP:
                         if player.rect.bottom == HEIGHT-10:
                             print('S')
-                            player.speedy -= 60              
+                            player.speedy -= 50              
                     if event.key == pygame.K_DOWN:
                         player.shoot(player2.rect.x,(player2))
 
@@ -85,7 +85,7 @@ def game_screen(window):
                     if event.key == pygame.K_w:
                         if player2.rect.bottom == HEIGHT-10:
                             print('S')
-                            player2.speedy -= 60  
+                            player2.speedy -= 50  
                         
                                 
                     if event.key == pygame.K_s:
