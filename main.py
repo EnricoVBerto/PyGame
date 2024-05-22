@@ -114,7 +114,7 @@ def game_screen(window):
                     
         if len(hits) > 0:
             #game = False
-            vida_jogador_1 -= 10
+            vida_jogador_1 -= 5
             livro = Livro(assets['livro_img'])
             all_sprites.add(livro)
             all_livros.add(livro)
@@ -124,7 +124,7 @@ def game_screen(window):
         hits = pygame.sprite.spritecollide(player2, all_livros, True)
         if len(hits) > 0:
             #game = False 
-            vida_jogador_2 -= 10
+            vida_jogador_2 -= 5
             livro = Livro(assets['livro_img'])
             all_sprites.add(livro)
             all_livros.add(livro)
