@@ -40,7 +40,7 @@ def vit1_screen(screen):
                 
 
         font = pygame.font.SysFont(None, 96)
-        text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
+        text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
         screen.blit(text, (WIDTH/4, HEIGHT/2)) 
 
         font = pygame.font.SysFont(None, 46)
@@ -87,7 +87,7 @@ def vit2_screen(screen):
                 
 
         font = pygame.font.SysFont(None, 96)
-        text = font.render(str('JOGADOR 2 VENCEU!!!'), True, (0, 0, 255))
+        text = font.render(str('JOGADOR 1 VENCEU!!!'), True, (0, 0, 255))
         screen.blit(text, (WIDTH/4, HEIGHT/2)) 
 
         font = pygame.font.SysFont(None, 46)
