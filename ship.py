@@ -36,7 +36,7 @@ class Ship(pygame.sprite.Sprite):
         if self.rect.bottom > HEIGHT - 10:
             self.rect.bottom = HEIGHT -10
         elif self.rect.bottom < HEIGHT - 10:
-            self.speedy = self.speedy + 10
+            self.speedy = self.speedy + 4
             print('+10')
         elif self.rect.bottom == HEIGHT - 10:
             self.speedy = 0
