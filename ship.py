@@ -11,6 +11,8 @@ class Ship(pygame.sprite.Sprite):
 
         self.image = ship_img
         self.rect = self.image.get_rect()
+        self.imagenormal = self.image
+        self.imageespelho = pygame.transform.flip(self.image, True, False)
         self.rect.centerx = x
         self.rect.bottom = y
         self.speedx = 0
