@@ -4,7 +4,7 @@ NOME DO JOGO:
 
 ALUNOS:
 
-    Enrico  Berto
+    Enrico Berto
     Gustavo Forbes
     Gianfranco Baglioni
 
