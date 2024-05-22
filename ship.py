@@ -42,9 +42,9 @@ class Ship(pygame.sprite.Sprite):
             self.speedy = 0
             print('NN')
 
-    def shoot(self,ddd):
+    def shoot(self,ddd,inimigo):
         # A nova bala vai ser criada logo acima e no centro horizontal da nave
-        new_ataque = Ataque(self.ataque_img, self.rect.centery, self.rect.centerx,ddd)
+        new_ataque = Ataque(self.ataque_img, self.rect.centery, self.rect.centerx,ddd,inimigo)
         self.all_sprites.add(new_ataque)
         self.all_ataques.add(new_ataque)
 

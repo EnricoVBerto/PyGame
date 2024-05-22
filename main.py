@@ -3,6 +3,7 @@
 import pygame
 import random
 from ataque import *
+from ataque2 import *
 from config import *
 from livro import *
 from ship import *
@@ -25,10 +26,11 @@ def game_screen(window):
     all_sprites = pygame.sprite.Group()
     all_livros = pygame.sprite.Group()
     all_ataques = pygame.sprite.Group()
+    all_ataques2 = pygame.sprite.Group()
 
     player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350,HEIGHT-10)
     all_sprites.add(player)
-    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 10,HEIGHT-10)
+    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques2, assets['ataque_img'], 10,HEIGHT-10)
     all_sprites.add(player2)
 
     for i in range(3):
@@ -71,7 +73,7 @@ def game_screen(window):
                             print('S')
                             player.speedy -= 50              
                     if event.key == pygame.K_DOWN:
-                        player.shoot(player2.rect.x)
+                        player.shoot(player2.rect.x,(player2))
 
 
                     
@@ -87,7 +89,7 @@ def game_screen(window):
                         
                                 
                     if event.key == pygame.K_s:
-                        player2.shoot(player.rect.x)
+                        player2.shoot(player.rect.x,(player))
 
                 # Verifica se soltou alguma tecla.
                 if event.type == pygame.KEYUP:
@@ -107,6 +109,9 @@ def game_screen(window):
         all_sprites.update()
         # Verifica se houve colisão os jogadores e os livros
         hits = pygame.sprite.spritecollide(player, all_livros, True)
+
+            
+                    
         if len(hits) > 0:
             #game = False
             vida_jogador_1 -= 10
@@ -116,8 +121,8 @@ def game_screen(window):
             if vida_jogador_1<=0:
                 state = DONE
             
-        hits2 = pygame.sprite.spritecollide(player2, all_livros, True)
-        if len(hits2) > 0:
+        hits = pygame.sprite.spritecollide(player2, all_livros, True)
+        if len(hits) > 0:
             #game = False 
             vida_jogador_2 -= 10
             livro = Livro(assets['livro_img'])
@@ -125,7 +130,26 @@ def game_screen(window):
             all_livros.add(livro)
             if vida_jogador_2<=0:
                 state = DONE
-                
+
+
+        hits = pygame.sprite.spritecollide(player,all_ataques2,True)                
+        if len(hits) > 0:
+            #game = False 
+            vida_jogador_1 -= 7.5
+            if vida_jogador_1<=0:
+                state = DONE
+
+        hits = pygame.sprite.spritecollide(player2,all_ataques,True)                
+        if len(hits) > 0:
+            #game = False 
+            vida_jogador_2 -= 7.5
+            if vida_jogador_2<=0:
+                state = DONE
+        
+
+
+
+
         # ----- Gera saídas
         window.fill((0, 0, 0))  # Preenche com a cor branca
         window.blit(assets['background'], (0, 0))
@@ -167,4 +191,4 @@ def game_screen(window):
 
     # ===== Finalização =====
      # Função do PyGame que finaliza os recursos utilizados
-    return DONE
+

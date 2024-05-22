@@ -1,9 +1,8 @@
 import pygame
 import random
-from config import WIDTH, HEIGHT, INIT, GAME, DONE
+from config import WIDTH, HEIGHT, INIT, GAME, QUIT
 from init_screen import init_screen 
 from main import game_screen
-from telafim import *
 pygame.init()
 pygame.mixer.init()
 
@@ -12,15 +11,13 @@ window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('O melhor jogo')
 
 state = INIT
-while True:
+while state != QUIT:
     if state == INIT:
         state = init_screen(window)
     elif state == GAME:
         state = game_screen(window)
-    elif state == DONE:
-        state = game_over(window)
     else:
-        break
+        state = QUIT
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados

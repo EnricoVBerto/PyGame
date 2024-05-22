@@ -2,7 +2,7 @@ import pygame
 from os import path
 from Imagens import *
 
-from config import BLACK, FPS, GAME
+from config import BLACK, FPS, GAME, QUIT
 
 
 def init_screen(screen):
@@ -23,10 +23,10 @@ def init_screen(screen):
         for event in pygame.event.get():
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
-                state = DONE
+                state = QUIT
                 running = False
 
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYUP:
                 state = GAME
                 running = False
 

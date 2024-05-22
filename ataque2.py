@@ -1,7 +1,7 @@
 import pygame
-class Ataque(pygame.sprite.Sprite):
+class Ataque2(pygame.sprite.Sprite):
     # Construtor da classe.
-    def __init__(self, img, bottom, centerx,Xdoinimigo,inimigo):
+    def __init__(self, img, bottom, centerx,Xdoinimigo):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         
@@ -12,7 +12,6 @@ class Ataque(pygame.sprite.Sprite):
         # Coloca no lugar inicial definido em x, y do constutor
         self.rect.centerx = centerx
         self.rect.bottom = bottom
-        self.inimigo = inimigo # armazena o inimigo
         self.inicialx = self.rect.x
 
         if self.rect.x > Xdoinimigo:
@@ -29,5 +28,4 @@ class Ataque(pygame.sprite.Sprite):
             self.kill()
         if abs(self.inicialx-self.rect.x) > 100:
             self.kill()
-
 

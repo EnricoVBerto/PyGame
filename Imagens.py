@@ -7,7 +7,6 @@ def load_assets():
     ship_img = pygame.image.load('assets/img/image .gif').convert_alpha()
     fighter_img = pygame.image.load('assets/img/fot.png').convert_alpha()
     tela_inicial = pygame.image.load('assets/img/final.JPG').convert_alpha()
-    tela_final= pygame.image.load('assets/img/images.jpeg').convert_alpha()
     return {
         # ----- Inicia assets----
         'font': pygame.font.SysFont(None, 48),
@@ -16,6 +15,5 @@ def load_assets():
         'ship_img': pygame.transform.scale(ship_img, (SHIP_WIDTH, SHIP_HEIGHT)),
         'ataque_img': pygame.image.load('assets/img/laserRed16.png').convert_alpha(),
         'fighter_img': pygame.transform.scale(fighter_img, (f_WIDTH, f_HEIGHT)),
-        'tela_inicial': pygame.transform.scale(tela_inicial,(in_WIDTH, in_HEIGHT)),
-        'tela_final': pygame.transform.scale(tela_final,(fi_WIDTH, fi_HEIGHT))
+        'tela_inicial': pygame.transform.scale(tela_inicial,(in_WIDTH, in_HEIGHT))
     }
