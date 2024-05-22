@@ -107,6 +107,9 @@ def game_screen(window):
         # ----- Atualiza estado do jogo
         # Atualizando a posição dos meteoros
         all_sprites.update()
+        player.Direção(player2,False)
+        player2.Direção(player,True)
+        
         # Verifica se houve colisão os jogadores e os livros
         hits = pygame.sprite.spritecollide(player, all_livros, True)
 
