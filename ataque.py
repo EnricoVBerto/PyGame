@@ -27,7 +27,7 @@ class Ataque(pygame.sprite.Sprite):
         # Se o tiro passar do inicio da tela, morre.
         if self.rect.bottom < 0:
             self.kill()
-        if abs(self.inicialx-self.rect.x) > 100:
-            self.kill()
+        #if abs(self.inicialx-self.rect.x) > 100:
+            #self.kill()
 
 
