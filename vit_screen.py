@@ -34,10 +34,9 @@ def vit1_screen(screen):
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
 
-        
-        cor = (100, 0, 0)#Escolhe a cor preta 
+
         vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
-        pygame.draw.polygon(screen, cor, vertices)
+        pygame.draw.polygon(screen, BLACK, vertices)
                 
 
         font = pygame.font.SysFont(None, 96)
@@ -79,9 +78,8 @@ def vit2_screen(screen):
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         
-        cor = (100, 0, 0)#Escolhe a cor preta 
         vertices = [(0, 0), (0, HEIGHT),(WIDTH, HEIGHT), (WIDTH, 0)] 
-        pygame.draw.polygon(screen, cor, vertices)
+        pygame.draw.polygon(screen, BLACK, vertices)
                 
 
         font = pygame.font.SysFont(None, 96)
