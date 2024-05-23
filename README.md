@@ -36,3 +36,6 @@ fim do jogo:
     quando algum dos players perder toda sua vida, ira ser direcionado para uma tela indicando qual player morreu, e caso queira recomeçar o jogo, apenas aperte espaco.
 
 https://www.youtube.com/watch?v=IyOvxlrWzuA
+
+Referência:
+Jogo de referência do handout da academia python
