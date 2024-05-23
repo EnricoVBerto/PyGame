@@ -29,7 +29,7 @@ class Player(pygame.sprite.Sprite):
         
         self.rect.x += self.speedx
         self.rect.y += self.speedy
-        print(self.speedy)
+      
         # Mantem dentro da tela
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
@@ -42,10 +42,10 @@ class Player(pygame.sprite.Sprite):
             self.rect.bottom = HEIGHT -10
         elif self.rect.bottom < HEIGHT - 10:
             self.speedy = self.speedy + 4
-            print('+10')
+       
         elif self.rect.bottom == HEIGHT - 10:
             self.speedy = 0
-            print('NN')
+            
 
     def shoot(self,ddd,inimigo):
         # A nova bala vai ser criada logo acima e no centro horizontal da nave
