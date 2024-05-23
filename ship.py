@@ -4,7 +4,7 @@ from ataque import *
 from config import *
 from livro import *
 
-class Ship(pygame.sprite.Sprite):
+class Player(pygame.sprite.Sprite):
     def __init__(self, ship_img, all_sprites, all_ataques, ataque_img, x,y):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
@@ -36,7 +36,7 @@ class Ship(pygame.sprite.Sprite):
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.top < 0:
-            print('N')
+            
             self.rect.top = 0
         if self.rect.bottom > HEIGHT - 10:
             self.rect.bottom = HEIGHT -10

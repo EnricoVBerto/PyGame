@@ -6,7 +6,6 @@ from config import BLACK, FPS, GAME, QUIT
 
 
 def vit1_screen(screen):
-    print('aaaaaaaaaaaaaaaaaaaaaa')
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
 
@@ -53,7 +52,7 @@ def vit1_screen(screen):
     return state
 
 def vit2_screen(screen):
-    print('aaaaaaaaaaaaaaaaaaaaaa')
+
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
 

@@ -9,9 +9,7 @@ def game_creen(window):
     # Carrega os sons do jogo
     pygame.mixer.music.load('assets/snd/Survivor - Eye of the Tiger228574-6ff089da-f029-41c9-9ce8-81a81e9aedab.mp3')
     pygame.mixer.music.set_volume(0.4)
-    boom_sound = pygame.mixer.Sound('assets/snd/expl3.wav')
-    destroy_sound = pygame.mixer.Sound('assets/snd/expl6.wav')
-    pew_sound = pygame.mixer.Sound('assets/snd/pew.wav')
+
 
 
     all_sprites = pygame.sprite.Group()
@@ -19,9 +17,9 @@ def game_creen(window):
     all_ataques = pygame.sprite.Group()
 
     assets = load_assets()
-    player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 40)
+    player = Player(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 40)
     all_sprites.add(player)
-    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 400)
+    player2 = Player(assets['fighter_img'], all_sprites, all_ataques, assets['ataque_img'], 400)
     all_sprites.add(player2)
 
     for i in range(3):

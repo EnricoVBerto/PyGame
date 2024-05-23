@@ -27,9 +27,9 @@ def game_screen(window):
     all_ataques = pygame.sprite.Group()
     all_ataques2 = pygame.sprite.Group()
 
-    player = Ship(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350,HEIGHT-10)
+    player = Player(assets['ship_img'], all_sprites, all_ataques, assets['ataque_img'], 1350,HEIGHT-10)
     all_sprites.add(player)
-    player2 = Ship(assets['fighter_img'], all_sprites, all_ataques2, assets['ataque_img'], 10,HEIGHT-10)
+    player2 = Player(assets['fighter_img'], all_sprites, all_ataques2, assets['ataque_img'], 10,HEIGHT-10)
     all_sprites.add(player2)
 
     for i in range(3):
@@ -69,8 +69,7 @@ def game_screen(window):
                     if event.key == pygame.K_RIGHT:
                         player.speedx += 10
                     if event.key == pygame.K_UP:
-                        if player.rect.bottom == HEIGHT-10:
-                            print('S')
+                        if player.rect.bottom == HEIGHT-10:                           
                             player.speedy -= 50              
                     if event.key == pygame.K_DOWN:
                         player.shoot(player2.rect.x,(player2))
@@ -84,7 +83,6 @@ def game_screen(window):
                         
                     if event.key == pygame.K_w:
                         if player2.rect.bottom == HEIGHT-10:
-                            print('S')
                             player2.speedy -= 50  
                         
                                 
